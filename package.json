@@ -1,0 +1,18 @@
+{
+  "name": "wattos-emporium",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "echo 'Warning! This app has no tests'",
+    "eject": "react-scripts eject"
+  }
+}
