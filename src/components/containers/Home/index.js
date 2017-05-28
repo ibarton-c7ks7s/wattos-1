@@ -11,11 +11,16 @@ class Home extends Component {
     var tiles = products.map((product)=>{
       var { name } = product;
       var slug = slugify(name.toLowerCase());
-      return (<li key={slug}><Link to={`/detail/${slug}`}>{name}</Link></li>);
+      return (<li key={slug}>
+          <Link to={`/detail/${slug}`}>
+            <img alt={`${name}`} src={`http://placehold.it/350x150?text=${encodeURIComponent(name)}`} />
+            {name}
+          </Link>
+        </li>);
     });
     return (
       <div>
-        <p>{`Welcome to Watto's!`}</p>
+        <h1>{`Watto's Space Emporium`}</h1>
         <ul>{tiles}</ul>
       </div>
     );
