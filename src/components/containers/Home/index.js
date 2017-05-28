@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import slugify from 'slugify';
 import { Link } from 'react-router-dom';
 
+import Particles from 'react-particles-js';
+import particleConfig from '../../../particleConfig';
+
 class Home extends Component {
   render() {
     var { products } = this.props;
@@ -20,6 +23,17 @@ class Home extends Component {
     });
     return (
       <div>
+        <Particles style={{
+          background: 'rgb(35, 39, 65)',
+          width: '100%',
+          height: '100%',
+          position: 'fixed',
+          zIndex: '-1',
+          top: 0,
+          right: 0,
+          left: 0,
+          bottom: 0
+        }} params={particleConfig} />
         <h1>{`Watto's Space Emporium`}</h1>
         <ul>{tiles}</ul>
       </div>
