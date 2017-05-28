@@ -25,7 +25,6 @@ class App extends Component {
 
   render() {
     var products = this.state.products;
-    console.log(this.state);
     return (
       <Router>
         <Switch>
