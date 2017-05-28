@@ -2,7 +2,14 @@ import React, {Component} from 'react';
 
 export default class Detail extends Component {
   render() {
-    return (<h1>Ship Details</h1>);
+    if (!this.props.product) return (<p>No data</p>);
+    var { name, manufacturer, class: shipClass } = this.props.product;
+    return (
+      <div>
+        <h1>{name}</h1>
+        <p>{manufacturer}</p>
+        <p>{shipClass}</p>
+      </div>);
   }
 
   shouldComponentUpdate() {
