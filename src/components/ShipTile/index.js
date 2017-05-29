@@ -17,10 +17,10 @@ class ShipTile extends Component {
     var styles = {
       tile: {
         listStyle: 'none',
-        margin: '0 20px',
+        margin: '0 50px 0 0',
         width: 400,
         display: 'inline-block',
-        textAlign: 'left',
+        textAlign: 'center',
         lineHeight: '20px',
         textDecoration: 'none',
         fontSize: 20,
@@ -34,8 +34,9 @@ class ShipTile extends Component {
         fontSize: 20
       },
       image: {
-        maxWidth: '100%',
-        maxHeight: '400px'
+        maxWidth: '300px',
+        maxHeight: '300px',
+        marginBottom: 15
       }
     };
     var { name } = product;

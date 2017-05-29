@@ -44,11 +44,14 @@ export default class Detail extends Component {
       leftCol: {
         width: '50%',
         float: 'left',
-        lineHeight: '25px'
+        lineHeight: '25px',
+        fontFamily: 'Arial, sans-serif'
       },
       rightCol: {
         width: '45%',
-        float: 'right'
+        float: 'right',
+        padding: '0 0 20px 20px',
+        background: 'rgba(255,255,255,0.2)'
       },
       button: {
         fontSize: 20,
