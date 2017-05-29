@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import slugify from 'slugify';
-import { Link } from 'react-router-dom';
 
 import Particles from 'react-particles-js';
 import particleConfig from '../../../particleConfig';
+
+import ShipTile from '../../ShipTile';
 
 class Home extends Component {
   render() {
@@ -11,40 +11,40 @@ class Home extends Component {
     products = products || [];
     var styles = {
       container: {
-        width: 690,
-        background: 'rgba(255,255,255,0.4)',
-        borderRadius: 10,
+        width: 900,
         margin: '20px auto',
-        padding: 20,
         clear: 'both',
-        fontFamily: '"distant_galaxyregular", sans-serif'
+        fontFamily: '"distant_galaxyregular", sans-serif',
+        color: 'white'
       },
       title: {
-        margin: '0 0 20px 0'
+        margin: '20px',
+        fontSize: 40
       },
       list: {
         margin: 0,
         padding: 0,
-        textAlign: 'center'
+        lineHeight: '150px'
       },
       tile: {
         listStyle: 'none',
-        margin: '0 10px 10px 0',
+        margin: '0 40px',
         width: 300,
         display: 'inline-block',
-        textAlign: 'left'
+        textAlign: 'left',
+        lineHeight: '20px',
+        textDecoration: 'none',
+        fontSize: 20
+      },
+      name: {
+        textDecoration: 'none',
+        color: 'white'
+      },
+      image: {
+        maxWidth: '100%',
+        maxHeight: '300px'
       }
     };
-    var tiles = products.map((product)=>{
-      var { name } = product;
-      var slug = slugify(name.toLowerCase());
-      return (<li style={styles.tile} key={slug}>
-          <Link to={`/detail/${slug}`}>
-            <img style={{width: '100%'}} alt={`${name}`} src={`http://placehold.it/350x150?text=${encodeURIComponent(name)}`} />
-            {name}
-          </Link>
-        </li>);
-    });
     return (
       <div style={styles.container}>
         <Particles style={{
@@ -60,7 +60,9 @@ class Home extends Component {
         }} params={particleConfig} />
         <h1 style={styles.title}>{`Watto's Space Emporium`}</h1>
         {products.length>0
-          ? <ul style={styles.list}>{tiles}</ul>
+          ? <ul style={styles.list}>
+              {products.map((product)=><ShipTile key={product.name} product={product} />)}
+            </ul>
           : <p>No items available</p>
         }
       </div>
